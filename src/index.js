@@ -315,7 +315,7 @@ class Field extends React.Component {
 		} else if (cmd === 'start') {
 			if (params.length === 1) {
 				return this.setState(state => ({
-					fieldHistory: [...state.fieldHistory, {text: `Launching ${params[0]}...`, hasBuffer: true}]
+					fieldHistory: [...state.fieldHistory, {text: `Launching ${params[0]}`, hasBuffer: true}]
 				}), () => window.open(/http/i.test(params[0]) ? params[0] : `https://${params[0]}`))
 			}
 			
