@@ -354,7 +354,7 @@ class Field extends React.Component {
 			return this.setState(state => ({
 				fieldHistory: [...state.fieldHistory, {text: [
 					'Hey there!',
-					`My name is Suhas Holla. I'm a software developer based around Arlington, TX, specializing Software Engineering and Database Systems. I love programming and developing interesting things for both regular folks and developers alike!`,
+					`My name is Suhas Holla. I'm a software developer based around Dallas,TX, specializing in Software Engineering and Database Systems at the University of Texas. I love programming and developing interesting things for both regular folks and developers alike!`,
 					`Type CONTACT if you'd like to get in touch - otherwise I hope you enjoy visting my portfolio!`
 				], hasBuffer: true}]
 			}))
@@ -376,7 +376,7 @@ class Field extends React.Component {
 					'July 2019 - December 2019',
           '',
 					'Certificates:',
-					'ReactJS...............................Udacity',
+					'Machine Learning...............................HarvardX',
 					'Front-end Development.................freeCodeCamp',
 					'JS Algorithms and Data Structures.....freeCodeCamp',
 					'Front-end Libraries...................freeCodeCamp',
@@ -459,56 +459,65 @@ class Field extends React.Component {
 					'',
 					'Netflix-UI',
 					'Built with Flutter',
-					`Some time ago I because increasingly addicted to minesweeper, specifically the version offered by Google. In fact, I was so addicted that I decided to build the damn thing.`,
+					// `Some time ago I because increasingly addicted to minesweeper, specifically the version offered by Google. In fact, I was so addicted that I decided to build the damn thing.`,
 					'',
 					'Taxi Booking App',
 					'Built with Flutter, Firebase',
-					'Ever heard of TinyUrl? Ever been to their website? Atrocious. So I made my own version of it.',
+					// 'Ever heard of TinyUrl? Ever been to their website? Atrocious. So I made my own version of it.',
 					'',
 					'Lyft Clone',
 					'Built with React Native',
-					`I was building a MS Excel spreadsheet parser (haven't finished it, imagine my stove has 10 rows of backburners) and needed a way to generate non-opinionated XML files. There were projects out there that came close, but I decided it would be fun to build it on my own.`,
+					// `I was building a MS Excel spreadsheet parser (haven't finished it, imagine my stove has 10 rows of backburners) and needed a way to generate non-opinionated XML files. There were projects out there that came close, but I decided it would be fun to build it on my own.`,
 					'',
 					'Covid Tracker',
 					'Built with Flutter',
-					`This was a project I had to build for my final while taking Udacity's React Nanodegree certification course. It's an app that tracks posts and comments, likes, etc. Nothing too complicated, except for Redux... God I hate Redux.`,
+					// `This was a project I had to build for my final while taking Udacity's React Nanodegree certification course. It's an app that tracks posts and comments, likes, etc. Nothing too complicated, except for Redux... God I hate Redux.`,
 					'',
 					'VPN App',
 					'Built with Android',
-					'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
+					// 'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
           '',
           'URL Shortner ',
 					'Built with PHP',
-					'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
+					// 'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
           '',
           'MMS Desktop App',
 					'Built with Electron,React,Firebase',
-					'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
+					// 'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
           '',
           'Content Streaming App',
 					'Built with React Native,Flutter',
-					'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
+					// 'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
 
         ], hasBuffer: true}]
 			}))
 		} else if (cmd === 'project') {
 			if (params.length === 1) {
 				const projects = [{
-					title: 'minesweeper',
-					live: 'https://codepen.io/HuntingHawk/full/GRgLWKV'
+					title: 'Netflix-UI',
+					live: 'https://github.com/suhashollakc'
 				}, {
-					title: 'puniurl',
-					live: 'http://www.puniurl.com/'
+					title: 'Taxi Booking App',
+					live:'https://github.com/suhashollakc'
 				}, {
-					title: 'taggen',
-					live: 'https://github.com/huntinghawk1415/Taggen'
+					title: 'Lyft Clone',
+					live: 'https://github.com/suhashollakc'
 				}, {
-					title: 'forum',
-					live: 'https://github.com/huntinghawk1415/ReactND-Readable'
+					title: 'Covid Tracker',
+					live: 'https://github.com/suhashollakc'
 				}, {
-					title: 'simon',
-					live: 'https://codepen.io/HuntingHawk/full/mNPVgj'
-				}]
+					title: 'VPN App',
+					live: 'https://github.com/suhashollakc'
+				}, {
+					title: 'URL Shortner',
+					live: 'https://github.com/suhashollakc'
+				},, {
+					title: 'MMS Desktop App',
+					live: 'https://github.com/suhashollakc'
+				},, {
+					title: 'Content Streaming App',
+					live: 'https://github.com/suhashollakc'
+				},]
 				
 				return this.setState(state => ({
 					fieldHistory: [...state.fieldHistory, {text: `Launching ${params[0]}...`, hasBuffer: true}]
