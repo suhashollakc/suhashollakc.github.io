@@ -2,11 +2,11 @@ import { evaluate } from 'mathjs';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+//  
 const App = () => {
 	const [ theme, setTheme ] = React.useState('dark')
 	const themeVars = theme === 'dark' ? {
-		app: {backgroundColor: '#333444'},
+		app: { backgroundColor: '#333444'},
 		terminal: {boxShadow: '0 2px 5px #111'},
 		window: {backgroundColor: '#222345', color: '#F4F4F4'},
 		field: {backgroundColor: '#222333', color: '#F4F4F4', fontWeight: 'normal'},
@@ -26,7 +26,7 @@ const App = () => {
 const Terminal = ({ theme, setTheme }) => {
 	const [ maximized, setMaximized ] = React.useState(false)
 	const [ title, setTitle ] = React.useState('Codeminter Portfolio')
-	const handleClose = () => (window.location.href = 'https://codepen.io/HuntingHawk')
+	const handleClose = () => (window.location.href = 'http://suhasholla.tech')
 	const handleMinMax = () => {
 		setMaximized(!maximized)
 		document.querySelector('#field').focus()
@@ -48,22 +48,22 @@ class Field extends React.Component {
 		this.state = {
 			commandHistory: [],
 			commandHistoryIndex: 0,
-			fieldHistory: [{text: 'Welcome to my terminal🔮'}, {text: 'Type HELP to see the full list of commands.', hasBuffer: true}],
+			fieldHistory: [{text: 'Welcome to my 🔮'}, {text: 'Type HELP to see the list of commands supported', hasBuffer: true}],
 			userInput: '',
 			isMobile: false
 		}
 		this.recognizedCommands = [{
 			command: 'help',
-			purpose: 'Provides help information for React Terminal commands.'
+			purpose: 'Provides help information regarding commands to explore my portfolio.'
 		}, {
 			command: 'date',
 			purpose: 'Displays the current date.'
 		}, {
 			command: 'start',
-			purpose: 'Launches a specified URL in a new tab or separate window.',
+			purpose: 'Launches the URL you enter in a separate new window.',
 			help: [
 				'START <URL>',
-				'Launches a specified URL in a new tab or separate window.',
+				'Launches the URL in a separate new window.',
 				'',
 				'URL......................The website you want to open.'
 			]
@@ -72,43 +72,47 @@ class Field extends React.Component {
 			purpose: 'Clears the screen.'
 		}, {
 			command: 'cmd',
-			purpose: 'Starts a new instance of the React Terminal.'
+			purpose: 'Starts a new instance of my portfolio terminal.'
 		}, {
 			command: 'theme',
-			purpose: 'Sets the color scheme of the React Terminal.',
+			purpose: 'Switch color modes for my portfolio',
 			help: [
 				'THEME [-l, -light, -d, -dark]',
-				'Sets the color scheme of the React Terminal.',
+				'Sets the color scheme of my portfolio.',
 				'',
 				'-l, -light...............Sets the color scheme to light mode.',
 				'-d, -dark................Sets the color scheme to dark mode.'
 			]
 		}, {
 			command: 'exit',
-			purpose: 'Quits the React Terminal and returns to Jacob\'s portfolio page.'
+			purpose: 'Quits my portfolio terminal and returns to my personal website.'
 		}, {
 			command: 'time',
 			purpose: 'Displays the current time.'
 		}, {
 			command: 'about',
 			isMain: true,
-			purpose: 'Displays basic information about Jacob.'
+			purpose: 'Displays basic information about Suhas Holla.'
 		}, {
 			command: 'experience',
 			isMain: true,
-			purpose: 'Displays information about Jacob\'s experience.'
-		}, {
+			purpose: 'Displays information about Suhas\'s experience.'
+		},  {
+			command: 'education',
+			isMain: true,
+			purpose: 'Displays information about Suhas\'s education.'
+		},{
 			command: 'skills',
 			isMain: true,
-			purpose: 'Displays information about Jacob\'s skills as a developer.'
+			purpose: 'Displays information about Suhas\'s skills as a developer.'
 		}, {
 			command: 'contact',
 			isMain: true,
-			purpose: 'Displays contact information for Jacob.'
+			purpose: 'Displays contact information for Suhas.'
 		}, {
 			command: 'projects',
 			isMain: true,
-			purpose: 'Displays information about what projects Jacob has done in the past.'
+			purpose: 'Displays information about what projects Suhas has done in the past.'
 		}, {
 			command: 'project',
 			isMain: true,
@@ -117,22 +121,25 @@ class Field extends React.Component {
 				'PROJECT <TITLE>',
 				'Launches a specified project in a new tab or separate window.',
 				'List of projects currently include:',
-				'Minesweeper',
-				'PuniUrl',
-				'Taggen',
-				'Forum',
-				'Simon',
+				'Netflix UI Clone',
+				'MMS Desktop App',
+				'Taxi Booking App',
+				'Lyft Clone',
+				'Covid Tracker',
+        'Crypto-Wallet',
+        'streaming-app',
+        'vpn-app',
 				'',
 				'TITLE....................The title of the project you want to view.'
 			]
 		}, {
 			command: 'title',
-			purpose: 'Sets the window title for the React Terminal.',
+			purpose: 'Sets the window title for the Codeminter Portfolio',
 			help: [
 				'TITLE <INPUT>',
-				'Sets the window title for the React Terminal.',
+				'Sets the window title for the Codeminter Portfolio.',
 				'',
-				'INPUT....................The title you want to use for the React Terminal window.'
+				'INPUT....................The title you want to use for the Codeminter Portfolio window.'
 			]
 		}]
 		this.handleTyping = this.handleTyping.bind(this)
@@ -321,8 +328,8 @@ class Field extends React.Component {
 			}))
 		} else if (cmd === 'cmd') {
 			return this.setState(state => ({
-				fieldHistory: [...state.fieldHistory, {text: 'Launching new instance of the React Terminal...', hasBuffer: true}]
-			}), () => window.open('https://codepen.io/HuntingHawk/full/rNaEZxW'))
+				fieldHistory: [...state.fieldHistory, {text: 'Launching new instance of my portfolio terminal...', hasBuffer: true}]
+			}), () => window.open(''))
 		} else if (cmd === 'theme') {
 			const { setTheme } = this.props
 			
@@ -338,7 +345,7 @@ class Field extends React.Component {
 				fieldHistory: [...state.fieldHistory, this.giveError(!flags.length ? 'nf' : 'bf', 'THEME')]
 			}))
 		} else if (cmd === 'exit') {
-			return window.location.href = 'https://codepen.io/HuntingHawk'
+			return window.location.href = 'http://suhasholla.tech'
 		} else if (cmd === 'time') {
 			return this.setState(state => ({
 				fieldHistory: [...state.fieldHistory, {text: `The current time is: ${new Date(Date.now()).toLocaleTimeString()}`, hasBuffer: true}]
@@ -347,13 +354,27 @@ class Field extends React.Component {
 			return this.setState(state => ({
 				fieldHistory: [...state.fieldHistory, {text: [
 					'Hey there!',
-					`My name is Jacob. I'm a software developer based around Washington, DC, specializing in the JavaScript ecosystem. I love programming and developing interesting things for both regular folks and developers alike!`,
-					`Type CONTACT if you'd like to get in touch - otherwise I hope you enjoy using the rest of the app!`
+					`My name is Suhas Holla. I'm a software developer based around Arlington, TX, specializing Software Engineering and Database Systems. I love programming and developing interesting things for both regular folks and developers alike!`,
+					`Type CONTACT if you'd like to get in touch - otherwise I hope you enjoy visting my portfolio!`
 				], hasBuffer: true}]
 			}))
 		} else if (cmd === 'experience') {
 			return this.setState(state => ({
 				fieldHistory: [...state.fieldHistory, {text: [
+          'Internship Experience:',
+					'1. VAC Teleinfra Solutions, IN',
+					'SDE Intern',
+					'March 2020 - December 2020',
+          '',
+          '2. PeopleClick Techno Solutions, IN',
+					'Data Science Intern',
+					'March 2019 - August 2019',
+          '',
+          'Research Work:',
+					'Electronic Health Record Sharing System using Blockchain',
+					'Published in the IJRESM December volume,2019',
+					'July 2019 - December 2019',
+          '',
 					'Certificates:',
 					'ReactJS...............................Udacity',
 					'Front-end Development.................freeCodeCamp',
@@ -361,10 +382,22 @@ class Field extends React.Component {
 					'Front-end Libraries...................freeCodeCamp',
 					'Responsive Web Design.................freeCodeCamp',
 					'',
-					'Work:',
-					'Shugoll Research',
-					'Database Technician',
-					'June 2015 - Present'
+					
+				], hasBuffer: true}]
+			}))
+		}  else if (cmd === 'education') {
+			return this.setState(state => ({
+				fieldHistory: [...state.fieldHistory, {text: [
+          '',
+					'University of Texas, Arlington',
+					'Masters in Computer Science',
+					'August 2021 - Present',
+          '',
+          'JSS Academy of Technical Education, INDIA',
+					'Bachelors of Computer Science and Engineering',
+					'August 2015 - June 2019',
+          '',
+					
 				], hasBuffer: true}]
 			}))
 		} else if (cmd === 'skills') {
@@ -374,16 +407,30 @@ class Field extends React.Component {
 					'HTML',
 					'CSS',
 					'JavaScript',
+          'Python',
+          'Java',
+          'Dart',
+          'C',
+          'Ruby on Rails',
 					'',
 					'Libraries/Frameworks:',
 					'Node',
 					'Express',
 					'React',
+          'Electron',
+          'Django',
+          'Flask',
 					'Next',
-					'React Native',
 					'Redux',
 					'jQuery',
 					'',
+          'Mobile Application Development:',
+          'React Native',
+          'Flutter',
+          'Android',
+          'Java',
+          'Ionic 5',
+          '',
 					'Other:',
 					'Git',
 					'GitHub',
@@ -397,38 +444,52 @@ class Field extends React.Component {
 		} else if (cmd === 'contact') {
 			return this.setState(state => ({
 				fieldHistory: [...state.fieldHistory, {text: [
-					'Email: contact@jacoblockett.com',
-					'Website: jacoblockett.com',
-					'LinkedIn: @jacoblockett',
-					'GitHub: @huntinghawk1415',
-					'CodePen: @HuntingHawk'
+					'Email: suhashollakc@gmail.com',
+					'Website: suhasholla.tech',
+					'LinkedIn:linkedin.com/in/suhashollakc',
+					'GitHub: github.com/suhashollakc',
+					'Instagram: @codeminter',
+          'Twitter: @code_minter'
 				], hasBuffer: true}]
 			}))
 		} else if (cmd === 'projects') {
 			return this.setState(state => ({
 				fieldHistory: [...state.fieldHistory, {text: [
-					'To view any of these projects live or their source files, type PROJECT <TITLE>, e.g. PROJECT Minesweeper.',
+					'To view any of these projects live or their source files, type PROJECT <TITLE>, e.g. PROJECT netflix-ui.',
 					'',
-					'Minesweeper',
-					'Built with React',
+					'Netflix-UI',
+					'Built with Flutter',
 					`Some time ago I because increasingly addicted to minesweeper, specifically the version offered by Google. In fact, I was so addicted that I decided to build the damn thing.`,
 					'',
-					'PuniUrl',
-					'Built with Express, Firebase',
+					'Taxi Booking App',
+					'Built with Flutter, Firebase',
 					'Ever heard of TinyUrl? Ever been to their website? Atrocious. So I made my own version of it.',
 					'',
-					'Taggen',
-					'Built with Node',
+					'Lyft Clone',
+					'Built with React Native',
 					`I was building a MS Excel spreadsheet parser (haven't finished it, imagine my stove has 10 rows of backburners) and needed a way to generate non-opinionated XML files. There were projects out there that came close, but I decided it would be fun to build it on my own.`,
 					'',
-					'Forum',
-					'Built with React, Redux, Bootstrap',
+					'Covid Tracker',
+					'Built with Flutter',
 					`This was a project I had to build for my final while taking Udacity's React Nanodegree certification course. It's an app that tracks posts and comments, likes, etc. Nothing too complicated, except for Redux... God I hate Redux.`,
 					'',
-					'Simon',
-					'Built with vanilla ice cream',
+					'VPN App',
+					'Built with Android',
 					'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
-				], hasBuffer: true}]
+          '',
+          'URL Shortner ',
+					'Built with PHP',
+					'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
+          '',
+          'MMS Desktop App',
+					'Built with Electron,React,Firebase',
+					'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
+          '',
+          'Content Streaming App',
+					'Built with React Native,Flutter',
+					'The classic Simon memory game. I originally built this for the freeCodeCamp legacy certification, but later came back to it because I hated how bad I was with JavaScript at the time. I also wanted to see how well I could build it during a speed-coding session. Just over an hour.',
+
+        ], hasBuffer: true}]
 			}))
 		} else if (cmd === 'project') {
 			if (params.length === 1) {
@@ -517,7 +578,7 @@ class Field extends React.Component {
 }
 const Text = ({ input, isCommand, isError, hasBuffer }) => <>
 	<div>
-		{isCommand && <div id="query">RT C:\Users\Guest&gt;</div>}
+		{isCommand && <div id="query">(Codeminter) C:\Users\Guest&gt;</div>}
 		<span className={!isCommand && isError ? 'error' : ''}>{input}</span>
 	</div>
 	{hasBuffer && <div></div>}
@@ -527,7 +588,7 @@ const MultiText = ({ input, isError, hasBuffer }) => <>
 	{hasBuffer && <div></div>}
 </>
 const UserText = ({ input, theme }) => <div>
-	<div id="query">RT C:\Users\Guest&gt;</div>
+	<div id="query">(Codeminter) C:\Users\Guest&gt;</div>
 	<span>{input}</span>
 	<div id="cursor" style={theme}></div>
 </div>
